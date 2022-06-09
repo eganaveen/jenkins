@@ -14,5 +14,5 @@
 
 - name: create a job
   when: check_job == 3
-  shell: "{{JENKINS_CLI_PREFIX}} create-job {{item.name}}"
+  shell: "cat /tmp/job-template.xml | {{JENKINS_CLI_PREFIX}} create-job {{item.name}}"
 
