@@ -1,5 +1,6 @@
-- name: check if ob exists
+- name: check if job exists
   shell: "{{JENKINS_CLI_PREFIX}} get-job {{item.name}}"
+  ignore_errors: true
   register: check_job
 
 - name: Generate UNIQ string for job
