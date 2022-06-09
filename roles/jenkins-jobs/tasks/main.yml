@@ -1,2 +1,2 @@
 - name: check jenkins connection
-  shell: "{{ JENKINS_CLI_PREFIX }}who-am-i"
+  shell: "{{JENKINS_CLI_PREFIX}} who-am-i"
