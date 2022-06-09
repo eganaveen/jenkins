@@ -1,2 +1,7 @@
 - name: Check jenkins connection
   shell: "{{JENKINS_CLI_PREFIX}} who-am-i"
+
+- name: create jenkins job
+  include_tasks: job.yml
+  loop:
+    - {name: "sample1", repoName: "sample1"}

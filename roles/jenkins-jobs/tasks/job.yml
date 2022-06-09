@@ -1,0 +1,17 @@
+- name: check if ob exists
+  shell: "{{JENKINS_CLI_PREFIX}} get-job {{item.name}}"
+  register: check_job
+
+- name: Generate UNIQ string for job
+  shell: date |md5sum | awk '{print $1}'
+  register: UNIQ_STRING
+
+- name: update job template
+  template:
+    src: job-template.xml
+    dest: /tmp/job-template.xml
+
+- name: create a job
+  when: check_job == 3
+  shell: "{{JENKINS_CLI_PREFIX}} create-job {{item.name}}"
+
