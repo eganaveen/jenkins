@@ -1,1 +1,1 @@
-JENKINS_CLI_PREFIX: "java -jar jenkins-cli.jar -s http://44.192.99.177:8080/ -auth admin:admin -webSocket "
+JENKINS_CLI_PREFIX: "java -jar jenkins-cli.jar -s http://172.31.9.44:8080/ -auth admin:admin -webSocket "
