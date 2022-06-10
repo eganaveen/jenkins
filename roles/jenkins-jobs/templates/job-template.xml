@@ -13,7 +13,7 @@
     <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.722.v8165b_a_cf25e9">
         <pruneDeadBranches>true</pruneDeadBranches>
         <daysToKeep>-1</daysToKeep>
-        <numToKeep>-1</numToKeep>
+        <numToKeep>10</numToKeep>
         <abortBuilds>false</abortBuilds>
     </orphanedItemStrategy>
     <triggers/>
@@ -27,7 +27,7 @@
                     <credentialsId>GITHUB</credentialsId>
                     <repoOwner>eganaveen</repoOwner>
                     <repository>{{item.repoName}}</repository>
-                    <repositoryUrl>https://github.com/eganaveen/{{item.repoName}}.git</repositoryUrl>
+                    <repositoryUrl>https://github.com/eganaveen/{{item.name}}.git</repositoryUrl>
                     <traits>
                         <org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
                             <strategyId>1</strategyId>
