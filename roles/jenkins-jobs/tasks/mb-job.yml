@@ -12,7 +12,11 @@
     src: job-template.xml
     dest: /tmp/job-template.xml
 
-- name: create a job
+- name: Create a job
   when: check_job.rc == 3
   shell: "cat /tmp/job-template.xml | {{JENKINS_CLI_PREFIX}} create-job {{item.name}}"
+
+- name: Update a job
+  when: check_job.rc == 0
+  shell: "cat /tmp/job-template.xml | {{JENKINS_CLI_PREFIX}} update-job {{item.name}}"
 
