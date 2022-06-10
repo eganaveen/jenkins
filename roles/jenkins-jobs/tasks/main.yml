@@ -4,7 +4,7 @@
 - name: create jenkins folder
   include_tasks: folders-job.yml
   loop:
-    - { displayName: "CI-pipelines", description: "All CI pipelines" }
+    - { name: "CI-pipelines", description: "All CI pipelines" }
 
 - name: create jenkins multibranch pipelines
   include_tasks: mb-job.yml
