@@ -22,7 +22,7 @@
         <data>
             <jenkins.branch.BranchSource>
                 <source class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@1637.vd833b_7ca_7654">
-                    <id>{{UNIQ_STRING}}</id>
+                    <id>{{UNIQ_STRING.stdout}}</id>
                     <apiUri>https://api.github.com</apiUri>
                     <credentialsId>GITHUB</credentialsId>
                     <repoOwner>eganaveen</repoOwner>
