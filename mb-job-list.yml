@@ -5,3 +5,4 @@ MY_JOBS:
   - { name: "shipping", repoName: "shipping", dirName: "CI-pipelines/" }
   - { name: "payment", repoName: "payment", dirName: "CI-pipelines/" }
   - { name: "frontend", repoName: "frontend", dirName: "CI-pipelines/" }
+  - { name: "dispatch", repoName: "dispatch", dirName: "CI-pipelines/" }
