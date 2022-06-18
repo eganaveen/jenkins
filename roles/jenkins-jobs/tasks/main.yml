@@ -11,3 +11,4 @@
   loop:
     - {name: "catalogue", repoName: "catalogue", dirName: "CI-pipelines/"}
     - {name: "cart", repoName: "cart", dirName: "CI-pipelines/"}
+    - {name: "user", repoName: "user", dirName: "CI-pipelines/"}
