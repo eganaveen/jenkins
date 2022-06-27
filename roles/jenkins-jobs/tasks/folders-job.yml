@@ -15,7 +15,7 @@
 
 - name: print dir name
   debug:
-    msg: "{{dir_name.start}}"
+    msg: "{{dir_name}}"
 
 - name: Update a directory
   when: check_dir.rc == 0
