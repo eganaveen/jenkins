@@ -14,7 +14,7 @@
   register: dir
 
 - name: print dir output
-  debug:
+  ansible.builtin.debug:
     msg: "{{dir.stdout}}"
 
 - name: Update a directory
