@@ -11,9 +11,13 @@
 - name: Create a directory
   when: check_dir.rc == 3
   shell: "cat /tmp/folder-template.xml | {{JENKINS_CLI_PREFIX}} create-job {{item.name}}"
-  register: dir_name
+  register: dir
+
+- name: print dir output
+  debug:
+    msg: "{{dir.stdout}}"
 
 - name: Update a directory
   when: check_dir.rc == 0
   shell: "cat /tmp/folder-template.xml | {{JENKINS_CLI_PREFIX}} update-job {{item.name}}"
-  register: dir_name
+  register: dir
