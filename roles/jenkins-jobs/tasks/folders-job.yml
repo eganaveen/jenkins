@@ -16,6 +16,7 @@
 - name: print dir output
   ansible.builtin.debug:
     msg: "{{dir.stdout}}"
+  become_user: root
 
 - name: Update a directory
   when: check_dir.rc == 0
