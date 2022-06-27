@@ -22,3 +22,7 @@
   shell: "cat /tmp/folder-template.xml | {{JENKINS_CLI_PREFIX}} update-job {{item.name}}"
   register: dir_name
 
+- name: print dir name
+  debug:
+    msg: "{{dir_name}}"
+
