@@ -2,6 +2,7 @@
   hosts: localhost
   vars_files:
     - mb-job-list.yml
+    - pipeline-job-list.yml
   roles:
     - jenkins-jobs
     

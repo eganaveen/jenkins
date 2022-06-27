@@ -1,0 +1,22 @@
+- name: check if job exists
+  shell: "{{JENKINS_CLI_PREFIX}} get-job {{item.dirName}}{{item.name}}"
+  ignore_errors: true
+  register: check_job
+
+- name: Generate UNIQ string for job
+  shell: date |md5sum | awk '{print $1}'
+  register: UNIQ_STRING
+
+- name: update job template
+  template:
+    src: job-template.xml
+    dest: /tmp/job-template.xml
+
+- name: Create a job
+  when: check_job.rc == 3
+  shell: "cat /tmp/job-template.xml | {{JENKINS_CLI_PREFIX}} create-job {{item.dirName}}{{item.name}}"
+
+- name: Update a job
+  when: check_job.rc == 0
+  shell: "cat /tmp/job-template.xml | {{JENKINS_CLI_PREFIX}} update-job {{item.dirName}}{{item.name}}"
+
