@@ -1,0 +1,6 @@
+- name: testing reister variable
+  host: localhost
+  tasks:
+    - name: creat a user
+      ansible.builtin.user:
+        name: ganesh
