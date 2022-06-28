@@ -5,3 +5,9 @@
       become: true
       ansible.builtin.user:
         name: ganesh
+      register: myuser
+
+    - name: fetch user data from register variable
+      debug:
+        msg: "{{myuser}}"
+
