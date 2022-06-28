@@ -21,12 +21,12 @@
 - name: Update a directory
   block:
     - name: Update a directory
-      //when: check_dir.rc == 0
+      #when: check_dir.rc == 0
       shell: "cat /tmp/folder-template.xml | {{JENKINS_CLI_PREFIX}} update-job {{item.name}}"
       register: dir
 
     - name: Fetch dir name
-      //when: check_dir.rc == 0
+      #when: check_dir.rc == 0
       shell: "{{dir.cmd}} | awk '{print $NF}'"
       register: foldername
   when: check_dir.rc == 0
