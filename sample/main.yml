@@ -2,5 +2,6 @@
   hosts: localhost
   tasks:
     - name: creat a user
+      become: true
       ansible.builtin.user:
         name: ganesh
