@@ -15,7 +15,7 @@
 
 - name: print dir output
   ansible.builtin.debug:
-    msg: "{{dir.stdout}}"
+    msg: "{{dir}}"
 
 - name: Update a directory
   when: check_dir.rc == 0
