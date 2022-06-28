@@ -21,3 +21,7 @@
   when: check_dir.rc == 0
   shell: "cat /tmp/folder-template.xml | {{JENKINS_CLI_PREFIX}} update-job {{item.name}}"
   register: dir
+
+- name: print dir output
+  ansible.builtin.debug:
+    msg: "{{dir}}"
