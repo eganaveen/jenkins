@@ -32,6 +32,10 @@
       #when: check_dir.rc == 0
       shell: "{{dir.cmd}} | awk '{print $NF}'"
       register: foldername
+
+    - name: folder name
+      debug:
+        msg: "{{foldername}}"
   when: check_dir.rc == 0
 
 
