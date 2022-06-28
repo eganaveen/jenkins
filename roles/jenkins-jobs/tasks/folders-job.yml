@@ -30,12 +30,12 @@
 
     - name: Fetch dir name
       #when: check_dir.rc == 0
-      shell:  "awk /{{dir.cmd}}/ {print $NF}"
+      shell:  "{{dir.cmd}}"
       register: foldername
 
     - name: folder name
       debug:
-        msg: "{{foldername}}"
+        msg: "{{foldername}} | awk {print $NF}"
   when: check_dir.rc == 0
 
 
