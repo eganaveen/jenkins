@@ -9,5 +9,5 @@
 
     - name: fetch user data from register variable
       debug:
-        msg: "{{myuser}}"
+        msg: "{{myuser.group}}"
 
