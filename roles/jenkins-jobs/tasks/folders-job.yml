@@ -13,15 +13,15 @@
   shell: "cat /tmp/folder-template.xml | {{JENKINS_CLI_PREFIX}} create-job {{item.name}}"
   register: dir
 
-- name: print dir output
+- name: Fetch dir name
   ansible.builtin.debug:
-    msg: "{{dir}}"
+  shell: "{{dir.cmd}} | awk '{print $NF}'"
 
 - name: Update a directory
   when: check_dir.rc == 0
   shell: "cat /tmp/folder-template.xml | {{JENKINS_CLI_PREFIX}} update-job {{item.name}}"
   register: dir
 
-- name: print dir output
+- name: Fetch dir name
   ansible.builtin.debug:
-    msg: "{{dir.cmd}}"
+  shell: "{{dir.cmd}} | awk '{print $NF}'"
