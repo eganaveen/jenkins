@@ -30,7 +30,7 @@
 
     - name: Fetch dir name
       #when: check_dir.rc == 0
-      shell: "{{dir.cmd}} | awk '{print $NF}'"
+      shell: "\"{{dir.cmd}}\" | awk '{print $NF}'"
       register: foldername
 
     - name: folder name
