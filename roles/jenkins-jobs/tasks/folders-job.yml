@@ -14,7 +14,6 @@
   register: dir
 
 - name: Fetch dir name
-  ansible.builtin.debug:
   shell: "{{dir.cmd}} | awk '{print $NF}'"
 
 - name: Update a directory
@@ -23,5 +22,4 @@
   register: dir
 
 - name: Fetch dir name
-  ansible.builtin.debug:
   shell: "{{dir.cmd}} | awk '{print $NF}'"
