@@ -8,17 +8,20 @@
     src: folder-template.xml
     dest: /tmp/folder-template.xml
 
-- name: Create a directory
-  when: check_dir.rc == 3
-  shell: "cat /tmp/folder-template.xml | {{JENKINS_CLI_PREFIX}} create-job {{item.name}}"
-  register: dir
+- name: Create a directory & Fecth dir
+  block:
+    - name: Create a directory
+      #when: check_dir.rc == 3
+      shell: "cat /tmp/folder-template.xml | {{JENKINS_CLI_PREFIX}} create-job {{item.name}}"
+      register: dir
 
-- name: Fetch dir name
+    - name: Fetch dir name
+      #when: check_dir.rc == 3
+      shell: "{{dir.cmd}} | awk '{print $NF}'"
+      register: foldername
   when: check_dir.rc == 3
-  shell: "{{dir.cmd}} | awk '{print $NF}'"
-  register: foldername
 
-- name: Update a directory
+- name: Update a directory & Fecth dir name
   block:
     - name: Update a directory
       #when: check_dir.rc == 0
