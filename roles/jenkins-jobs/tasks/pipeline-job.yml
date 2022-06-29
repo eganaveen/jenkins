@@ -9,7 +9,7 @@
 
 - name: update job template
   template:
-    src: job-template.xml
+    src: pipeline-template.xml
     dest: /tmp/job-template.xml
 
 - name: Create a job
