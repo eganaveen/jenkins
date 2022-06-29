@@ -3,10 +3,6 @@
   ignore_errors: true
   register: check_job
 
-- name: Generate UNIQ string for job
-  shell: date |md5sum | awk '{print $1}'
-  register: UNIQ_STRING
-
 - name: update job template
   template:
     src: pipeline-template.xml
